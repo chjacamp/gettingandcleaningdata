@@ -8,3 +8,9 @@
 ## 5) From the data set in step 4, creates a second, independent 
 ##    tidy data set with the average of each variable for each activity
 ##    and each subject.
+
+
+
+##thoughts. this is a fixed-width format data set. it includes
+## variable names, triaxial data (x,y,z) from accelerometers, gyros, and
+## some calculation "total acceleration."
