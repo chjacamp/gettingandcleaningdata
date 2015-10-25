@@ -38,13 +38,25 @@ all <- rbind(test, train)
 summer <- grepl("bandsEnergy", measurements)
 all <- all[!summer]
 
-## Select any measurement columns containing mean or standard deviations.
-## Group by subjectID and activity, summarise the other columns by their
-## means.
-all %>% 
+
+## Arrange the tbl by subjectID and Activity, select any observation containing mean or
+## standard deviation, take the means of each of these measurements.
+all <- all %>%
   tbl_df %>%
   arrange(subjectID, activity) %>%
   select(subjectID, activity, contains("mean"), contains("std")) %>%
   group_by(subjectID, activity) %>%
-  summarise_each(funs(mean)) %>%
-  write.table(file="../gettingandcleaningdata.txt", row.names=F)
+  summarise_each(funs(mean))
+  
+
+
+## Make activity labels, if there's a better way to do this, please let me know
+all$activity[all$activity==1] <- "walking"
+all$activity[all$activity==2] <- "walking_upstairs"
+all$activity[all$activity==3] <- "walking_downstairs"
+all$activity[all$activity==4] <- "sitting"
+all$activity[all$activity==5] <- "standing"
+all$activity[all$activity==6] <- "laying"
+
+
+write.table(all, file="../gettingandcleaningdata.txt", row.names=F)
