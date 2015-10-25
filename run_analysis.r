@@ -26,32 +26,34 @@ train <- "./train/x_train.txt" %>% fread %>% tbl_df
 train_activity <- "./train/y_train.txt" %>% fread
 train_subject_id <- "./train/subject_train.txt" %>% fread
 
-##this one needs some work to function as column names - we
-##need to transpose them into a row.
+## This one needs some work to function as descriptive variable names - we
+## need to transpose them into a row.
+
 measurements <- 
   "features.txt" %>% 
   fread %>% 
   tbl_df %>% 
   t
 
-##measurements still needs a little work
+## Measurements still need a little work:
 measurements <- measurements[2,]
 measurements <- c("subjectID", "activity",measurements)
 
-##bind us those col's
+## Binds the columns
 test <- bind_cols(test_subject_id, test_activity, test)
 train <- bind_cols(train_subject_id, train_activity, train)
 
-##add us those column names
+## Adds column names
 colnames(test) <- measurements
 colnames(train) <- measurements
 
+## Merges the training and test sets
 all <- rbind(test, train)
 
-##Create a list of duplicate column names from measurements
+## Creates a list of duplicate column names from measurements
 summer <- grepl("bandsEnergy", measurements)
 
-##Remove duplicate columns from data frame
+## Removes duplicate columns from data frame
 all <- all[!summer]
 
 ##Piping so easy that Mario might get bored - 
@@ -62,9 +64,3 @@ all %>%
   group_by(subjectID, activity) %>%
   summarise_each(funs(mean)) %>%
   print
-
-
-
-
-
-
