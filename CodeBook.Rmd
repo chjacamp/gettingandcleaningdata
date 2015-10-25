@@ -16,9 +16,9 @@ The script, run_analysis.r, results in a tidy data set of 88 variables and 180 r
 
 Columns:
 
-A. SubjectID - The subjects are identified in an integer vector from 1 to 30.
+1. SubjectID - The subjects are identified in an integer vector from 1 to 30.
 
-B. Activity - The activity being performed in a character vector consisting of the levels:
+2. Activity - The activity being performed in a character vector consisting of the levels:
   "Walking"
   "Walking_upstairs"
   "Walking_downstairs"
@@ -26,7 +26,7 @@ B. Activity - The activity being performed in a character vector consisting of t
   "Sitting"
   "Laying"
   
-C. Columns 3-88 contain the names of the measurements relating to mean and standard deviation.
+Columns 3-88 contain the names of the measurements relating to mean and standard deviation.
 
 1.                     tBodyAcc-mean()-X
 2.                     tBodyAcc-mean()-Y
