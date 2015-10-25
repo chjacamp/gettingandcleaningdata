@@ -26,6 +26,8 @@ Columns:
   "Laying"
   
 3. Columns 3-88 contain the names of the measurements relating to mean and standard deviation.
+
+
 1.                     tBodyAcc-mean()-X
 2.                     tBodyAcc-mean()-Y
 3.                     tBodyAcc-mean()-Z
