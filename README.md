@@ -8,7 +8,7 @@ output: html_document
 
 #Getting and Cleaning Data Coursera#
 
-##An tidy data set created from the Human Activity Recognition Using Smartphones Data Set##
+##A tidy data set created from the Human Activity Recognition Using Smartphones Data Set##
 ##Hosted by the Machine Learning Repository, http://archive.ics.uci.edu/ml/index.html.
 
 ###Background:
