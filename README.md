@@ -22,9 +22,9 @@ The script, run_analysis.r, attempts to create a tidy data set from the availabl
 
 ###Method
 
-1) Read the data into R using fread of the data.table package. Assume the data is in the working directory and unzipped. Wrap the main data frames in tbl_df of the DPLYR package for further operations.
-2) Bind the data into appropriate columns and rows.
-3) Use DPLYR verbs to select the measurements relating to standard deviation and mean, and to summarize this data by providing the mean of each measurement per subject per activity.
+1. Read the data into R using fread of the data.table package. Assume the data is in the working directory and unzipped. Wrap the main data frames in tbl_df of the DPLYR package for further operations.
+2. Bind the data into appropriate columns and rows.
+3. Use DPLYR verbs to select the measurements relating to standard deviation and mean, and to summarize this data by providing the mean of each measurement per subject per activity.
 
 ###Results
 
